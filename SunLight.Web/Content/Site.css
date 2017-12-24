@@ -1,0 +1,125 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+#site-footer{
+     background-color:#363636;
+     color: #fff;
+    padding: 2em 0;
+}
+#site-footer h3 {
+    color: #fdba31;
+    text-transform: uppercase;
+}
+#site-footer a {
+    color: #fff;
+}
+#site-footer span {
+    color: #fdba31;
+}
+
+#contact-bar {
+    /*position: absolute;*/
+    background-color: #fdba31;
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    text-align: right;
+    z-index: 1000;
+    text-transform: uppercase;
+    padding-right: 2em;
+    float : left;
+     position: absolute;
+  margin-top: -90px;
+  
+}
+.outer {
+  position: relative;
+  /*margin-top: 20px;*/
+}
+.navbar-header a img{
+    height:50px;
+    width: 70px;
+}
+input, select, textarea {
+     max-width: 600px; 
+}
+#submitbutton p, ul, ol {
+    margin: 2em 0;
+}
+#main{
+    margin-top : 30px;
+}
+#mainmain{
+    margin-top:20px;
+}
+#main-nav {
+  position: absolute;
+  float:left;
+  margin-top:-13px;
+}
+h2 {
+    font-weight: 300;
+    color: #1f5ec7;
+}
+h1, h3 {
+    font-family: 'Roboto Condensed' sans-serif;
+    font-weight: 700;
+}
+
+h3, .h3 {
+    font-size: 24px;
+}
+.price-table thead th.prod-name {
+    background-color: #363636;
+    color: #fdba31;
+    text-align: left;
+}
+
+.table-bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td {
+    border: 1px solid #ddd;
+}
+
+.price-table thead th {
+    
+    background-color: #fdba31;
+    color: #363636;
+    text-align: left;
+}
+#blox .primary {
+    background-color: #fdba31;
+    color: #333;
+}
+#blox .secondary {
+    background-color: #363636;
+    color: #fff;
+}
+#blox .block-left {
+    float: left;
+    width: 320px;
+}
+
+#blox .block-right {
+    float: right;
+    width: 230px;
+    margin: 0 -1.1em 0 0;
+}
+
+
+
+
+

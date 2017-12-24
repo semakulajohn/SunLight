@@ -1,0 +1,128 @@
+﻿@using CaptchaMvc.HtmlHelpers
+@using CaptchaMvc;
+
+@model SunLight.Models.ContactUs
+@{
+    ViewBag.Title = "Contact Us";
+}
+<section class="content" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Email Us</h2>
+                @{ var formSent = false;
+                 var invalidCaptcha = false;
+                 var captcha = TempData["Captcha"];
+                 var success = TempData["Success"];
+                 if (captcha != null)
+                 {
+                     bool.TryParse(captcha.ToString(), out invalidCaptcha);
+                 }
+                 if (invalidCaptcha)
+                 {
+                    <p class="alert alert-danger">  @ViewBag.ErrMessage </p>
+
+                 }
+                 if (success != null)
+                 {
+                     bool.TryParse(success.ToString(), out formSent);
+                 }
+
+                 if (formSent)
+                 {
+                    <p class="alert alert-success">Thank you for contacting SunLight,we shall contact you soon</p>
+                 }
+                 else
+                 {
+
+                     using (Html.BeginForm("Contact", "ContactUs", FormMethod.Post, new { role = "form" }))
+                     {
+                        <div class="form-group">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" name="Name" class="form-control" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="emailAddress" class="form-label">Email Address</label>
+                            <input type="email" name="emailAddress" class="form-control" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactNumber" class="form-label">Contact Number</label>
+                            <input type="text" name="PhoneNumber" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactNumber" class="form-label">Message</label>
+                            <textarea name="Message" class="form-control" rows="5" required=""></textarea>
+                        </div>
+                        @*<div class="form-group">
+                                <img src="captcha.asp" id="imgCaptcha">&nbsp;<a href="javascript:void(0);" onclick="RefreshImage('imgCaptcha');">
+                                    <br>
+                                    <br>Please type the word above in the text block below.
+                                </a>
+                                <input type="text" name="txtCaptcha" id="txtCaptcha" value="" required=""><p></p>
+                            </div>*@
+                        <div class="form-group">
+
+                            @Html.Captcha(4)
+                            <br />
+                            <p class="alert alert-danger">  @ViewBag.ErrMessage </p>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="contactNumber" class="form-label">Department</label>
+                            <select name="Department" class="form-control">
+
+                                <option value="Accounts">Accounts</option>
+
+                                <option value="Management">Management</option>
+
+                                <option value="Sales">Sales</option>
+
+                                <option value="Technical">Technical</option>
+
+
+
+
+                            </select>
+                            
+                            <div align="right"><p><input type="submit" name="sendMessage" id="sendMessage" class="btn btn-primary round" value="Send Message"></p></div>
+                        </div>
+                     }
+                 }
+                }
+            </div>
+            <div class="col-md-6">
+                <h2>Find Us</h2>
+                <p><strong>Postal Address </strong></p>
+                <address> Post Net Suite 201<br> Private Bag X4<br> Bedfordview<br> 2008<br> Uganda </address>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td><strong>Information Email:</strong></td>
+                            <td><a href="mailto:info@sunlight.com">info@sunlight.com</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>National Share Call:</strong></td>
+                            <td>0860 18 19 20 or +27 11 432 0075</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Management:</strong></td>
+                            <td><a href="mailto:info@sunlight.com">info@sunlight.com</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sales Department:</strong></td>
+                            <td><a href="mailto:sales@sunlight.com">sales@sunlight.com</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Accounts Department</strong></td>
+                            <td><a href="mailto:accounts@sunlight.com">accounts@sunlight.com</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Technical Support</strong></td>
+                            <td><a href="mailto:techsupport@sunlight.com">techsupport@sunlight.com</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
